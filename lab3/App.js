@@ -1,0 +1,33 @@
+//Duales Angel
+//Marjuki Zaida
+//Resurreccion Brix
+//Sierra Mary Joy
+//BSCS 3-2
+
+import React, {useState} from 'react';
+import {View, Button, StyleSheet} from 'react-native';
+
+import SampleModal from './components/sampleModal';
+
+export default function App(){
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  return(
+    <View style= {styles.container}>
+      <Button color = '#ffa505'title = "Click Me" onPress = {()=> setIsModalOpen(true)} />
+      <SampleModal visible = {isModalOpen} 
+        onClose = {() => setIsModalOpen(false)}/>
+    </View>
+  );
+}
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+  },
+  
+});
